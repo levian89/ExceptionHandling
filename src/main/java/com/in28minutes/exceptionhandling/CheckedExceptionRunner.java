@@ -18,6 +18,6 @@ public class CheckedExceptionRunner {
     private static void someOtherMethod() throws InterruptedException {  // checked exception meaning it is checked at the
         Thread.sleep(2000);                                         // compile time, and the calling method needs either to
     }                                                                     // handle it with try and catch or to throw it.
-}                                                                         // these are all which are not RuntimeException and
+}                                                                         // These are all which are not RuntimeException and
                                                                           // subclasses of it (for ex.: IOException, SQLException
                                                                           // etc.)
