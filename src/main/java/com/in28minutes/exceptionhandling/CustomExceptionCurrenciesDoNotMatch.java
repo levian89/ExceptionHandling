@@ -9,7 +9,7 @@ class Amount1 {
         this.amount = amount;
     }
 
-    public void add(Amount1 that) throws CurrenciesDoNotMatchException {
+    public void add(Amount1 that) {
         if(!this.currency.equals(that.currency)) {
             //throw new Exception("Currencies Don't Match " + this.currency + " & " + that.currency);
             throw new CurrenciesDoNotMatchException("Currencies Don't Match " + this.currency + " & " + that.currency);
@@ -22,14 +22,14 @@ class Amount1 {
     }
 }
 
-class CurrenciesDoNotMatchException extends Exception {
+class CurrenciesDoNotMatchException extends RuntimeException {
     public CurrenciesDoNotMatchException(String message) {
         super(message);
     }
 }
 
 public class CustomExceptionCurrenciesDoNotMatch {
-    public static void main(String[] args) throws CurrenciesDoNotMatchException {
+    public static void main(String[] args)  {
         Amount1 amount1 = new Amount1("USD", 10);
         Amount1 amount2 = new Amount1("EUR", 20);
         amount1.add(amount2);
